@@ -18,7 +18,8 @@ jobs:
           cache: npm
       - run: npm ci --ignore-scripts
       - name: Check PHP curl support
-        run: php -r 'exit(extension_loaded("curl") ? 0 : 1);'
+        run: |
+          php -r 'exit(extension_loaded("curl") ? 0 : 1);'
       - run: npm test
         env:
           PHP_BINARY: php
