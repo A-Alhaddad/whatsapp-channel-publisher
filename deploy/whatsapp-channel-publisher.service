@@ -1,0 +1,21 @@
+[Unit]
+Description=Private WhatsApp channel publisher
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=whatsapp-publisher
+Group=whatsapp-publisher
+WorkingDirectory=/opt/whatsapp-channel-publisher
+EnvironmentFile=/etc/whatsapp-channel-publisher.env
+# Verify Node >=22.12 and adjust this executable if installed elsewhere.
+ExecStart=/usr/bin/node src/main.mjs
+Restart=on-failure
+RestartSec=10
+TimeoutStopSec=15
+UMask=0077
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

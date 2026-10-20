@@ -1,0 +1,44 @@
+{
+  "name": "whatsapp-channel-publisher",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "start": "node --env-file=.env src/main.mjs",
+    "test": "node --test test/*.test.mjs",
+    "setup": "node scripts/setup.mjs",
+    "cli": "node --env-file=.env bin/publisher.mjs",
+    "check:package": "node scripts/check-package.mjs"
+  },
+  "dependencies": {
+    "qrcode": "1.5.4",
+    "whatsapp-web.js": "1.34.7"
+  },
+  "overrides": {
+    "puppeteer": "25.14.0"
+  },
+  "description": "Self-hosted WhatsApp channel publishing for marketing websites, stores and content platforms. Arabic and English documentation.",
+  "author": "Eng. Abd Alkareem Alhaddad",
+  "license": "MIT",
+  "keywords": [
+    "whatsapp",
+    "channels",
+    "marketing",
+    "publishing",
+    "self-hosted",
+    "nodejs",
+    "php",
+    "arabic"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/A-Alhaddad/whatsapp-channel-publisher.git"
+  },
+  "homepage": "https://github.com/A-Alhaddad/whatsapp-channel-publisher#readme",
+  "bugs": {
+    "url": "https://github.com/A-Alhaddad/whatsapp-channel-publisher/issues"
+  }
+}
